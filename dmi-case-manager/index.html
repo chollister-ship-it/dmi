@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DMI Case Manager — Assessment Forms | Phzio</title>
+<meta name="description" content="Find the right disability medical assessment form and billing path for DMI case managers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+:root{--accent:#A9D4F5;--ink:#12284A;--muted:#46597A;--ground:#F2F7FC;--line:#CFDDEB;--line-strong:#9FB3C8;--tint:#E3F0FB;--display:'Space Grotesk',Inter,system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--ground);color:var(--ink)}
+a{color:inherit}
+button{font-family:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+.top{background:#fff;border-bottom:1px solid var(--line)}
+.top .wrap{padding-top:12px;padding-bottom:12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{display:block;height:32px;width:auto}
+.brand .rule{width:1px;height:22px;background:var(--line-strong)}
+.brand .partner{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.04em;color:var(--muted)}
+.nav{display:flex;align-items:center;gap:6px}
+.navlink{text-decoration:none;border-radius:999px;padding:12px 16px;font-size:15px;font-weight:500;transition:background .15s}
+.navlink:hover{background:var(--tint)}
+.navlink.icon{width:44px;height:44px;padding:0;display:flex;align-items:center;justify-content:center;border:1px solid var(--line-strong)}
+
+.banner{background-color:var(--accent);background-image:radial-gradient(rgba(18,40,74,.12) 1px,transparent 1px);background-size:22px 22px}
+.banner .wrap{padding-top:28px;padding-bottom:30px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 40px}
+.banner .eyebrow{display:block;font-size:13px;font-weight:600;letter-spacing:.12em;margin-bottom:8px}
+.banner h1{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(30px,4.4vw,48px);line-height:1.05;letter-spacing:-.035em;text-wrap:balance}
+.banner p{margin:0;font-size:17px;line-height:1.5;max-width:430px;text-wrap:pretty}
+
+.layout{padding-top:28px;padding-bottom:72px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:28px}
+.finder{flex:1 1 300px;max-width:360px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:24px}
+.q{display:flex;flex-direction:column;gap:12px}
+.q-head{display:flex;align-items:center;gap:10px}
+.q-head .num{width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:13px}
+.q-head h2{margin:0;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.01em}
+.tiles{display:flex;flex-direction:column;gap:8px}
+.tile{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:12px 14px;min-height:68px;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.tile:hover{transform:translateX(3px);box-shadow:0 0 0 2px var(--ink)}
+.tile[aria-pressed="true"]{background:var(--accent);border-color:var(--ink)}
+.tile svg{flex:none}
+.tile .txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.tile .label{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.01em}
+.tile .hint{font-size:13px;line-height:1.35;color:#3B4E6E}
+.tile .count{flex:none;min-width:30px;text-align:center;font-family:var(--display);font-weight:600;font-size:13px;padding:4px 8px;border-radius:999px;background:var(--tint);color:var(--ink)}
+.tile[aria-pressed="true"] .count{background:var(--ink);color:#fff}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:0 16px;min-height:44px;font-size:14px;font-weight:600;cursor:pointer;transition:box-shadow .15s ease}
+.pill:hover{box-shadow:0 0 0 2px var(--ink)}
+.pill[aria-pressed="true"]{background:var(--accent);border-color:var(--ink)}
+.search{display:flex;flex-direction:column;gap:8px}
+.search label{font-size:14px;font-weight:600}
+.search .field{display:flex;align-items:center;gap:10px;background:var(--ground);border:1px solid var(--line-strong);border-radius:999px;padding:0 16px;min-height:48px}
+.search input{flex:1;min-width:0;height:46px;background:transparent;border:0;color:var(--ink);font-family:inherit;font-size:16px}
+
+.results{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.results-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.results-head h2{margin:0;font-family:var(--display);font-weight:700;font-size:28px;letter-spacing:-.025em}
+.results-meta{display:flex;align-items:center;gap:16px;font-size:15px;color:var(--muted)}
+.clear{background:transparent;border:0;padding:0;min-height:44px;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:18px;animation:rise .45s cubic-bezier(.2,.7,.2,1) both;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--ink);box-shadow:0 18px 40px -20px rgba(18,40,74,.4)}
+.card-top{display:flex;align-items:flex-start;gap:16px}
+.card-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:10px}
+.tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.tag{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--muted)}
+.tag i{width:10px;height:10px;border-radius:3px;background:var(--accent);box-shadow:inset 0 0 0 1px var(--ink)}
+.legacy{font-size:12px;font-weight:600;letter-spacing:.08em;padding:3px 10px;border-radius:999px;background:var(--ink);color:#fff}
+.card h3{margin:0;font-family:var(--display);font-weight:600;font-size:21px;line-height:1.2;letter-spacing:-.02em;text-wrap:balance}
+.titlebtn{background:transparent;border:0;padding:0;margin:0;font:inherit;letter-spacing:inherit;color:inherit;text-align:left;cursor:pointer}
+.titlebtn:hover{text-decoration:underline;text-underline-offset:4px}
+.card p{margin:0;font-size:15px;line-height:1.5;color:var(--muted);text-wrap:pretty}
+.thumb{flex:none;position:relative;width:78px;height:100px;padding:9px 8px;background:#fff;border:1px solid #7F95AD;border-radius:8px;overflow:hidden;cursor:zoom-in;transition:transform .18s ease,box-shadow .18s ease}
+.thumb:hover{transform:scale(1.06) rotate(-2deg);box-shadow:0 10px 22px -10px rgba(18,40,74,.5)}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
+.thumb .lines{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.thumb .lines span{height:3px;border-radius:2px;background:var(--line)}
+.thumb .lines span:first-child{height:8px;background:var(--accent)}
+.thumb .zoom{position:absolute;right:6px;bottom:6px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center}
+.opts{margin-top:auto;display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:center;gap:10px;min-height:56px;padding:0 14px 0 10px;border-radius:14px;font-size:15px;font-weight:600;background:var(--ground);color:var(--ink);border:1px solid var(--line);transition:background .15s ease,color .15s ease,border-color .15s ease}
+.opt:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.optlink{text-decoration:none;display:flex;align-items:center;gap:10px;min-height:56px}
+.optlink.main{flex:1;min-width:0}
+.badge{min-width:58px;text-align:center;padding:6px 10px;border-radius:9px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);font-family:var(--display);font-size:13px;font-weight:700}
+.badge.free{background:var(--accent);color:var(--ink)}
+.badge.paid{background:var(--ink);color:#fff}
+.copy{flex:none;display:flex;align-items:center;gap:6px;min-height:44px;padding:0 12px;border-radius:10px;font-size:13px;font-weight:600;background:transparent;color:inherit;border:1px solid currentColor;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease}
+.copy:hover{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.arrow{transition:transform .18s ease}
+.opt:hover .arrow{transform:translateX(5px)}
+.empty{background:#fff;border:1px dashed #7F95AD;border-radius:22px;padding:48px 24px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.empty h3{margin:0;font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.02em}
+.empty p{margin:0;font-size:16px;line-height:1.5;color:var(--muted);max-width:440px}
+.empty button{margin-top:8px;min-height:48px;padding:0 24px;border-radius:999px;border:0;background:var(--ink);color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+
+.support{background:var(--accent)}
+.support .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
+.support .copyblock{flex:1 1 380px;display:flex;flex-direction:column;gap:10px}
+.support h2{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(26px,3.6vw,36px);line-height:1.1;letter-spacing:-.03em;text-wrap:balance}
+.support p{margin:0;font-size:17px;line-height:1.55;max-width:520px}
+.contact{display:flex;align-items:center;gap:12px;min-height:56px;padding:0 24px;border-radius:999px;background:#fff;border:1px solid var(--ink);color:var(--ink);font-family:var(--display);font-size:17px;font-weight:600;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+.contact:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(18,40,74,.55)}
+.foot{background:#fff;border-top:1px solid var(--line)}
+.foot .wrap{padding-top:18px;padding-bottom:18px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:14px;color:var(--muted)}
+
+.overlay{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:24px}
+.overlay[hidden]{display:none}
+.backdrop{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:rgba(18,40,74,.6);cursor:zoom-out}
+.modal{position:relative;width:100%;max-width:680px;max-height:calc(100vh - 48px);overflow:auto;background:#fff;border-radius:24px;box-shadow:0 30px 80px -20px rgba(18,40,74,.6);display:flex;flex-direction:column;animation:pop .22s cubic-bezier(.2,.7,.2,1) both}
+.modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:22px 22px 16px 26px}
+.modal-head .info{display:flex;flex-direction:column;gap:8px;min-width:0}
+.modal-head .mtag{font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--muted)}
+.modal-head h2{margin:0;font-family:var(--display);font-weight:700;font-size:26px;line-height:1.15;letter-spacing:-.025em;text-wrap:balance}
+.modal-head p{margin:0;font-size:15px;line-height:1.5;color:var(--muted)}
+.closebtn{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s ease}
+.closebtn:hover{background:var(--tint)}
+.modal-body{background:var(--ground);border-top:1px solid var(--line);padding:28px 24px;display:flex;justify-content:center;border-radius:0 0 24px 24px}
+.modal-body img{display:block;width:100%;max-width:520px;height:auto;background:#fff;border:1px solid #7F95AD;border-radius:10px;box-shadow:0 14px 30px -18px rgba(18,40,74,.5)}
+.modal-body .nopreview{width:100%;max-width:420px;padding:56px 24px;text-align:center;background:#fff;border:1px dashed #7F95AD;border-radius:10px;font-size:15px;line-height:1.5;color:var(--muted)}
+
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media (prefers-reduced-motion:reduce){.card,.modal{animation:none}.card,.tile,.pill,.opt,.arrow,.contact,.thumb,.copy{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+<div class="wrap">
+<div class="brand">
+<img src="assets/phzio-logo-black.png" alt="Phzio">
+<span class="rule" aria-hidden="true"></span>
+<span class="partner">DMI CASE MANAGER</span>
+</div>
+<nav class="nav" aria-label="Primary">
+<a class="navlink" href="mailto:cm.support@phzio.com?subject=DMI%20support%20request">Support</a>
+<a class="navlink icon" href="https://app.phzio.com" aria-label="Your account">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+</a>
+</nav>
+</div>
+</header>
+
+<section class="banner">
+<div class="wrap">
+<div>
+<span class="eyebrow">DISABILITY MEDICAL ASSESSMENTS</span>
+<h1>The right form, two taps away.</h1>
+</div>
+<p>Pick what you're working on and who's covering the fee. The matching forms line up as you choose.</p>
+</div>
+</section>
+
+<div class="wrap layout" id="forms">
+
+<aside class="finder" aria-label="Find a form">
+<div class="q">
+<div class="q-head"><span class="num" aria-hidden="true">1</span><h2 id="q-cat">What are you working on?</h2></div>
+<div class="tiles" id="cats" role="group" aria-labelledby="q-cat"></div>
+</div>
+<div class="q">
+<div class="q-head"><span class="num" aria-hidden="true">2</span><h2 id="q-pay">Who's covering the fee?</h2></div>
+<div class="pills" id="pays" role="group" aria-labelledby="q-pay"></div>
+</div>
+<div class="search">
+<label for="form-search">Or search by name</label>
+<div class="field">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<input id="form-search" type="search" placeholder="SSQ, CADA, MSK…" autocomplete="off">
+</div>
+</div>
+</aside>
+
+<main class="results">
+<div class="results-head">
+<h2 id="heading">All assessment forms</h2>
+<div class="results-meta">
+<span id="count" aria-live="polite"></span>
+<button class="clear" id="clear" type="button" hidden>Clear filters</button>
+</div>
+</div>
+<div class="grid" id="grid"></div>
+<div class="empty" id="empty" hidden>
+<h3>Nothing matches that combo.</h3>
+<p>Try a different fee option or clear your filters. If the form you need isn't here, our support team will sort it out.</p>
+<button type="button" id="showall">Show all forms</button>
+</div>
+</main>
+
+</div>
+
+<section class="support" id="support">
+<div class="wrap">
+<div class="copyblock">
+<h2>Not sure which form fits? Ask a human.</h2>
+<p>Our case manager support team can point you to the right assessment and billing path.</p>
+</div>
+<a class="contact" href="mailto:cm.support@phzio.com?subject=DMI%20support%20request">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3z"></path><path d="M3 7l9 6 9-6"></path></svg>
+<span>cm.support@phzio.com</span>
+</a>
+</div>
+</section>
+<footer class="foot">
+<div class="wrap">
+<span>Phzio × Disability Management Institute</span>
+<span>Case manager forms &amp; links</span>
+</div>
+</footer>
+
+<div class="overlay" id="overlay" hidden>
+<button class="backdrop" type="button" id="backdrop" aria-label="Close preview"></button>
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<div class="modal-head">
+<div class="info">
+<span class="mtag" id="modal-tag"></span>
+<h2 id="modal-title"></h2>
+<p id="modal-desc"></p>
+</div>
+<button class="closebtn" type="button" id="modal-close" aria-label="Close preview">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+</div>
+<div class="modal-body" id="modal-body"></div>
+</div>
+</div>
+
+<script>
+(function () {
+  var B = 'https://app.phzio.com/book/c/';
+  var F = '/form_consult?pftype=';
+  function free(label, client, form) { return { free: true, badge: 'No fee', label: label, href: B + client + F + form }; }
+  function paid(client, form) { return { free: false, badge: '$129', label: 'if member paid', href: B + client + F + form }; }
+
+  var CATS = [
+    { id: 'aps', label: 'New claim', tag: 'NEW CLAIM · APS', hint: 'Attending Physician Statements', icon: 'M9 4h6v3H9zM7 5.5H5.5v15h13v-15H17M12 10.5v6M9 13.5h6' },
+    { id: 'cont', label: 'Continuing claim', tag: 'CONTINUING CLAIM', hint: 'Ongoing short-term disability', icon: 'M4 12a8 8 0 0 1 13.7-5.6L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.6L4 15.5M4 20v-4.5h4.5' },
+    { id: 'ofa', label: 'Accommodation', tag: 'ACCOMMODATION', hint: 'Occupational fitness assessments', icon: 'M4 8h16v11H4zM9 8V5h6v3M4 13h16' },
+    { id: 'saw', label: 'Stay at Work', tag: 'STAY AT WORK', hint: 'CADA cognitive + functional', icon: 'M5 20V6l7-3 7 3v14M9 20v-5h6v5M9.5 10.5l2 2 3.5-4' }
+  ];
+  var PAYS = [
+    { id: 'all', label: 'Show both' },
+    { id: 'free', label: 'No member fee' },
+    { id: 'paid', label: 'Member paid · $129' }
+  ];
+  var FORMS = [
+    { cat: 'aps', name: 'Private ER (No member fees)', desc: 'Use for CLHIA assessments. No member fee.', keys: 'clhia aps private er', img: 'assets/clhia-aps.webp', opts: [free('No member fee', 'dmi-private-er', 'aps-master-2025')] },
+    { cat: 'aps', name: 'CLHIA STD APS', desc: 'Initial Disability Insurance Medical Statement (Physical + Mental).', keys: 'attending physician statement short term', img: 'assets/clhia-aps.webp', opts: [paid('dmi-fee', 'aps-master-2025')] },
+    { cat: 'aps', name: 'Empire Life APS', desc: 'Empire Life Attending Physician Statement.', keys: 'std ltd waiver', img: 'assets/empire-life-aps.jpg', opts: [paid('dmi-fee', 'dmi-aps-std-ltd-waiver')] },
+    { cat: 'aps', name: 'SSQ Attending Physician Statement MSK', desc: 'For new STD applications related to MSK.', keys: 'aps physical musculoskeletal', img: 'assets/ssq-msk.jpg', opts: [paid('dmi-fee', 'dmi-aps-physical-ssq')] },
+    { cat: 'aps', name: 'SSQ Attending Physician Statement Mental', desc: 'For new STD applications related to mental health.', keys: 'aps psychological', img: 'assets/ssq-mental.jpg', opts: [paid('dmi-fee', 'dmi-aps-mental-ssq')] },
+    { cat: 'aps', name: 'CADA APS (CLHIA)', desc: 'Attending Physician Statement forms for CADA.', keys: '', img: 'assets/clhia-aps.webp', opts: [free('No member fee', 'cada', 'aps-master-2025')] },
+    { cat: 'cont', name: 'Continuing Claim for Short Term Disability Benefits', desc: 'For ongoing short-term disability claims.', keys: 'std aps', img: 'assets/dmi-continuing-claim.jpg', opts: [paid('dmi-fee', 'dmi-aps-continuing'), free('No member fee', 'dmi-no-fee', 'dmi-aps-continuing')] },
+    { cat: 'ofa', name: 'Occupational Fitness Assessment Form', desc: 'For employees requiring an accommodation.', keys: 'ofa ofaf', img: 'assets/dmi-ofa.jpg', opts: [free('CSBT', 'dmi-no-fee', 'dmi-ofa'), free('Ops Expenses', 'ofafdmiops', 'dmi-ofa'), free('Private ER', 'ofafprivate', 'dmi-ofa')] },
+    { cat: 'ofa', name: 'CSSEIP Occupational Fitness Form', desc: 'For CSSEIP members requiring an accommodation.', keys: 'ofa ofaf', img: 'assets/csseip-ofa.jpg', opts: [free('CSBT', 'dmi-no-fee', 'dmi-csseip-ofaf'), free('Ops Expenses', 'ofafdmiops', 'dmi-csseip-ofaf'), free('Private ER', 'ofafprivate', 'dmi-csseip-ofaf')] },
+    { cat: 'saw', name: 'CADA SAW – Cognitive + Functional Abilities Form', desc: 'Stay at Work cognitive and functional abilities.', keys: 'combined', img: 'assets/cada-saw-combined.webp', opts: [free('No member fee', 'dmi-no-fee', 'cada-saw-combined')] },
+    { cat: 'saw', name: 'CADA SAW Cognitive Abilities', desc: 'Stay at Work cognitive abilities form.', keys: '', img: 'assets/cada-saw-combined.webp', opts: [free('No member fee', 'cada', 'cada-saw-cognitive')] },
+    { cat: 'saw', name: 'CADA SAW Functional Abilities', desc: 'Stay at Work functional abilities form.', keys: 'physical', img: 'assets/cada-saw-functional.webp', opts: [free('No member fee', 'cada', 'cada-saw-physical')] },
+    { cat: 'aps', legacy: true, name: 'DMI Attending Physician Statement (OLD)', desc: 'Generic APS for short-term MSK, mental, and other disability cases.', keys: 'legacy', img: '', opts: [paid('dmi-fee', 'dmi-aps')] }
+  ];
+
+  var state = { cat: 'all', pay: 'all', q: '' };
+  var tagOf = {};
+  CATS.forEach(function (c) { tagOf[c.id] = c.tag; });
+
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (ch) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]; }); };
+  var ARROW = '<svg class="arrow" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>';
+  var COPY_ICON = 'M9 9h11v11H9zM5 15H4V4h11v1';
+  var CHECK_ICON = 'M5 12.5l4.5 4.5L19 7.5';
+  var ZOOM = '<span class="zoom" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4-4M11 8.5v5M8.5 11h5"></path></svg></span>';
+
+  function renderFilters() {
+    $('cats').innerHTML = CATS.map(function (c) {
+      var n = FORMS.filter(function (f) { return f.cat === c.id; }).length;
+      return '<button class="tile" type="button" data-cat="' + c.id + '" aria-pressed="' + (state.cat === c.id) + '">' +
+        '<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="' + c.icon + '"></path></svg>' +
+        '<span class="txt"><span class="label">' + esc(c.label) + '</span><span class="hint">' + esc(c.hint) + '</span></span>' +
+        '<span class="count">' + n + '</span></button>';
+    }).join('');
+    $('pays').innerHTML = PAYS.map(function (p) {
+      return '<button class="pill" type="button" data-pay="' + p.id + '" aria-pressed="' + (state.pay === p.id) + '">' + esc(p.label) + '</button>';
+    }).join('');
+  }
+
+  function renderResults() {
+    var needle = state.q.trim().toLowerCase();
+    var html = '';
+    var shown = 0;
+    FORMS.forEach(function (f, idx) {
+      if (state.cat !== 'all' && f.cat !== state.cat) return;
+      var opts = f.opts.filter(function (o) { return state.pay === 'all' || (state.pay === 'free') === o.free; });
+      if (!opts.length) return;
+      if (needle && (f.name + ' ' + f.desc + ' ' + f.keys + ' ' + tagOf[f.cat]).toLowerCase().indexOf(needle) === -1) return;
+      var thumbInner = f.img
+        ? '<img src="' + f.img + '" alt="" loading="lazy">'
+        : '<span class="lines" aria-hidden="true"><span style="width:62%"></span><span style="width:100%"></span><span style="width:86%"></span><span style="width:100%"></span><span style="width:70%"></span><span style="width:92%"></span></span>';
+      html += '<article class="card" style="animation-delay:' + (shown * 45) + 'ms">' +
+        '<div class="card-top"><div class="card-text">' +
+        '<div class="tags"><span class="tag"><i aria-hidden="true"></i><span>' + esc(tagOf[f.cat]) + '</span></span>' + (f.legacy ? '<span class="legacy">LEGACY</span>' : '') + '</div>' +
+        '<h3><button class="titlebtn" type="button" data-open="' + idx + '">' + esc(f.name) + '</button></h3>' +
+        '<p>' + esc(f.desc) + '</p></div>' +
+        '<button class="thumb" type="button" data-open="' + idx + '" aria-label="Preview form: ' + esc(f.name) + '">' + thumbInner + ZOOM + '</button></div>' +
+        '<div class="opts">' + opts.map(function (o) {
+          return '<div class="opt">' +
+            '<a class="optlink main" href="' + esc(o.href) + '" target="_blank" rel="noopener"><span class="badge ' + (o.free ? 'free' : 'paid') + '">' + esc(o.badge) + '</span><span>' + esc(o.label) + '</span></a>' +
+            '<button class="copy" type="button" data-copy="' + esc(o.href) + '" aria-label="Copy link: ' + esc(f.name) + ', ' + esc(o.badge + ' ' + o.label) + '">' +
+            '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="' + COPY_ICON + '"></path></svg><span>Copy</span></button>' +
+            '<a class="optlink" href="' + esc(o.href) + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">' + ARROW + '</a></div>';
+        }).join('') + '</div></article>';
+      shown++;
+    });
+    $('grid').innerHTML = html;
+    var filtered = state.cat !== 'all' || state.pay !== 'all' || needle !== '';
+    var heading = 'All assessment forms';
+    CATS.forEach(function (c) { if (c.id === state.cat) heading = c.label + ' forms'; });
+    $('heading').textContent = heading;
+    $('count').textContent = filtered ? (shown + ' of ' + FORMS.length + ' forms') : (FORMS.length + ' forms');
+    $('clear').hidden = !filtered;
+    $('empty').hidden = shown !== 0;
+  }
+
+  function render() { renderFilters(); renderResults(); }
+  function reset() { state = { cat: 'all', pay: 'all', q: '' }; $('form-search').value = ''; render(); }
+
+  function copyText(text, done) {
+    function fallback() {
+      try {
+        var t = document.createElement('textarea');
+        t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.select(); document.execCommand('copy'); document.body.removeChild(t); done();
+      } catch (e) {}
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, fallback); } else { fallback(); }
+  }
+
+  var lastFocus = null;
+  function openModal(idx) {
+    var f = FORMS[idx];
+    if (!f) return;
+    lastFocus = document.activeElement;
+    $('modal-tag').textContent = tagOf[f.cat];
+    $('modal-title').textContent = f.name;
+    $('modal-desc').textContent = f.desc;
+    $('modal-body').innerHTML = f.img
+      ? '<img src="' + f.img + '" alt="First page of the ' + esc(f.name) + ' form">'
+      : '<div class="nopreview">A preview of this form isn\'t available yet.</div>';
+    $('overlay').hidden = false;
+    document.body.style.overflow = 'hidden';
+    $('modal-close').focus();
+  }
+  function closeModal() {
+    if ($('overlay').hidden) return;
+    $('overlay').hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  $('cats').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-cat]'); if (!b) return;
+    var id = b.getAttribute('data-cat');
+    state.cat = state.cat === id ? 'all' : id; render();
+    var again = document.querySelector('[data-cat="' + id + '"]'); if (again) again.focus();
+  });
+  $('pays').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-pay]'); if (!b) return;
+    var id = b.getAttribute('data-pay');
+    state.pay = id; render();
+    var again = document.querySelector('[data-pay="' + id + '"]'); if (again) again.focus();
+  });
+  $('form-search').addEventListener('input', function (e) { state.q = e.target.value; renderResults(); });
+  $('clear').addEventListener('click', reset);
+  $('showall').addEventListener('click', reset);
+  $('grid').addEventListener('click', function (e) {
+    var c = e.target.closest('[data-copy]');
+    if (c) {
+      copyText(c.getAttribute('data-copy'), function () {
+        var label = c.querySelector('span'); var path = c.querySelector('path');
+        label.textContent = 'Copied'; path.setAttribute('d', CHECK_ICON);
+        clearTimeout(c._t);
+        c._t = setTimeout(function () { label.textContent = 'Copy'; path.setAttribute('d', COPY_ICON); }, 1800);
+      });
+      return;
+    }
+    var o = e.target.closest('[data-open]');
+    if (o) openModal(parseInt(o.getAttribute('data-open'), 10));
+  });
+  $('backdrop').addEventListener('click', closeModal);
+  $('modal-close').addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+  render();
+})();
+</script>
+</body>
+</html>
